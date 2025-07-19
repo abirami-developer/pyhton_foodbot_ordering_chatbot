@@ -1,6 +1,5 @@
 import random
 
-# Sample menu and prices
 menu = {
     "pizza": 12,
     "burger": 8,
@@ -16,7 +15,6 @@ responses = {
     "farewell": ["Thank you for ordering! Enjoy your meal.", "Goodbye! Hope to see you again."]
 }
 
-# Function to process user input
 def chatbot_response(user_input):
     user_input = user_input.lower()
 
@@ -37,11 +35,9 @@ def chatbot_response(user_input):
     else:
         return "I'm sorry, I didn't understand. Would you like to see the menu?"
 
-# Initialize order tracking
 order_items = []
 total_cost = 0
 
-# Chatbot loop
 print("FoodBot: Hello! Type 'menu' to see our dishes or type your order directly.")
 while True:
     user_input = input("You: ")
@@ -56,7 +52,6 @@ while True:
     response = chatbot_response(user_input)
     print("FoodBot:", response)
 
-    # If an item was ordered, update the order list and total cost
     for item in menu.keys():
         if item in user_input.lower():
             order_items.append(item)
